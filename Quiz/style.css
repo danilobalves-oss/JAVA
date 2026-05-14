@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, rgba(11, 12, 20, 0.92), rgba(11, 12, 20, 0.92)),
+                url('https://noticias.coches.com/wp-content/uploads/2016/02/logos-marcas-coches.jpg') center/cover no-repeat fixed;
+    color: #f8f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255, 142, 0, 0.14), transparent 24%),
+                radial-gradient(circle at bottom left, rgba(236, 64, 122, 0.1), transparent 24%);
+    pointer-events: none;
+}
+
+h1 {
+    margin: 0 0 18px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #ffcf44;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    text-align: center;
+    text-shadow: 0 0 18px rgba(255, 207, 68, 0.45), 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+#container {
+    width: min(100%, 680px);
+    background: rgba(18, 23, 45, 0.96);
+    border: 1px solid rgba(255, 207, 68, 0.18);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+}
+
+#container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: -1px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, rgba(255, 207, 68, 0.14), transparent 40%, rgba(255, 95, 31, 0.1));
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+#container {
+    position: relative;
+    overflow: hidden;
+}
+
+#pergunta {
+    margin: 0 0 18px;
+    font-size: 1.35rem;
+    line-height: 1.6;
+}
+
+#respostas {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+#respostas button,
+#container > button {
+    width: 100%;
+    padding: 15px 18px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #ffb703, #ff521f);
+    color: #101014;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+    box-shadow: 0 12px 24px rgba(255, 87, 34, 0.24);
+}
+
+#respostas button:hover,
+#container > button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    box-shadow: 0 16px 32px rgba(255, 87, 34, 0.32);
+}
+
+#resultado {
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #f8f8ff;
+    min-height: 52px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    #container {
+        padding: 20px;
+    }
+}
